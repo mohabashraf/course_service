@@ -1,7 +1,9 @@
 package course.course_service.domain;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Student {
 
     @Id
