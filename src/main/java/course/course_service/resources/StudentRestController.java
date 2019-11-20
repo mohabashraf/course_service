@@ -18,12 +18,20 @@ public class StudentRestController {
     StudentBuilder studentBuilder;
 
     @GetMapping("/list")
-    public List<Student> getStudents(){
-        return studentBuilder.retrieveAllStudents();
+    public List<Student> getStudents()
+    {
+        return studentBuilder
+                .retrieveAllStudents();
     }
+
     @PostMapping(path = "/add")
-    public ResponseEntity<String> addStudent(@RequestBody StudentSpecification studentSpecification){
+    public ResponseEntity<String> addStudent(
+            @RequestBody StudentSpecification studentSpecification)
+    {
         studentBuilder.addStudent(studentSpecification);
-        return ResponseEntity.ok(studentBuilder.addStudent(studentSpecification).getName());
+        return ResponseEntity
+                .ok(studentBuilder
+                        .addStudent(studentSpecification)
+                        .getName());
     }
 }
