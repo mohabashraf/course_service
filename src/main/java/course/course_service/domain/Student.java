@@ -1,9 +1,11 @@
 package course.course_service.domain;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.stereotype.Component;
 
 @Component
+@Document(collection = "student")
 public class Student {
 
     @Id

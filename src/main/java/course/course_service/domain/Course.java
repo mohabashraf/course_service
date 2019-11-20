@@ -1,9 +1,12 @@
 package course.course_service.domain;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.ArrayList;
 import java.util.List;
 
+@Document(collection = "course")
 public class Course {
 
     @Id
@@ -11,7 +14,13 @@ public class Course {
 
     private Instructor instructor;
 
+    private String name;
+
     private List<Student> enrolledStudents;
+
+    public Course() {
+        enrolledStudents = new ArrayList<Student>();
+    }
 
     public String getID() {
         return ID;
@@ -37,4 +46,11 @@ public class Course {
         this.instructor = instructor;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }

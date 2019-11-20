@@ -9,7 +9,7 @@ public class CourseFactory {
 
     public Course createCourse(CourseSpecification specification){
         Course course = new Course();
-        course.setInstructor(specification.getInstructor());
+        course.setName(specification.getName());
         course.setID(specification.getID());
         return course;
     }
