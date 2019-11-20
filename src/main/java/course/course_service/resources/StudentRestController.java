@@ -23,7 +23,6 @@ public class StudentRestController {
     }
     @PostMapping(path = "/add")
     public ResponseEntity<String> addStudent(@RequestBody StudentSpecification studentSpecification){
-        //StudentSpecification studentSpecification = new StudentSpecification(studentName);
         studentBuilder.addStudent(studentSpecification);
         return ResponseEntity.ok(studentBuilder.addStudent(studentSpecification).getName());
     }
